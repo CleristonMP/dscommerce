@@ -11,7 +11,6 @@ import java.util.Set;
 public class OrderDTO {
 
     private Long id;
-
     private Instant moment;
     private OrderStatus status;
     private UserDTO client;

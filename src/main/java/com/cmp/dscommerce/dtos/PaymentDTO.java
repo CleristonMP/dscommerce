@@ -22,23 +22,11 @@ public class PaymentDTO {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Instant getMoment() {
         return moment;
     }
 
-    public void setMoment(Instant moment) {
-        this.moment = moment;
-    }
-
     public OrderDTO getOrder() {
         return order;
-    }
-
-    public void setOrder(OrderDTO order) {
-        this.order = order;
     }
 }
