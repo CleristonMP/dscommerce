@@ -1,6 +1,7 @@
 package com.cmp.dscommerce.controllers;
 
 import com.cmp.dscommerce.dtos.ProductDTO;
+import com.cmp.dscommerce.dtos.ProductMinDTO;
 import com.cmp.dscommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,10 +28,10 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ProductDTO>> findAll(
+    public ResponseEntity<Page<ProductMinDTO>> findAll(
             @RequestParam(name = "name", defaultValue = "") String name,
             Pageable pageable) {
-        Page<ProductDTO> page = service.findAll(name, pageable);
+        Page<ProductMinDTO> page = service.findAll(name, pageable);
         return ResponseEntity.ok(page);
     }
 
