@@ -1,11 +1,10 @@
 package com.cmp.dscommerce.dtos;
 
 import com.cmp.dscommerce.entities.Product;
-import jakarta.validation.constraints.*;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 public class ProductDTO {
 

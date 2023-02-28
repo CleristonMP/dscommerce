@@ -2,7 +2,7 @@ package com.cmp.dscommerce.controllers;
 
 import com.cmp.dscommerce.dtos.ProductDTO;
 import com.cmp.dscommerce.services.ProductService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
