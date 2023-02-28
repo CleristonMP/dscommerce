@@ -1,12 +1,13 @@
 package com.cmp.dscommerce.services;
 
+import com.cmp.dscommerce.dtos.CategoryDTO;
 import com.cmp.dscommerce.dtos.ProductDTO;
 import com.cmp.dscommerce.dtos.ProductMinDTO;
+import com.cmp.dscommerce.entities.Category;
 import com.cmp.dscommerce.entities.Product;
 import com.cmp.dscommerce.repositories.ProductRepository;
 import com.cmp.dscommerce.services.exceptions.DatabaseException;
 import com.cmp.dscommerce.services.exceptions.ResourceNotFoundException;
-import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -15,6 +16,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityNotFoundException;
 
 @Service
 public class ProductService {
@@ -73,5 +76,12 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDto : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDto.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
