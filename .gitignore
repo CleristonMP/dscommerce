@@ -38,3 +38,5 @@ target/
 
 ### Zone.Identifier files ###
 *:Zone.Identifier
+
+create.sql
